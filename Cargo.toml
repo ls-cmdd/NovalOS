@@ -1,0 +1,29 @@
+[workspace]
+resolver = "3"
+members = ["kernel"]
+
+[package]
+name = "novel_os"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+default = []
+smp-low-handshake = ["kernel/smp-low-handshake"]
+smp-experimental = ["kernel/smp-experimental"]
+
+[build-dependencies]
+kernel = { path = "kernel", artifact = "bin", target = "x86_64-unknown-none" }
+bootloader = { version = "0.11.17", default-features = false, features = ["bios", "uefi"] }
+
+[patch.crates-io]
+bootloader = { path = "vendor/bootloader" }
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = "fat"
+opt-level = "z"

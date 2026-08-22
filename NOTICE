@@ -1,0 +1,7 @@
+Novel OS
+
+Novel OS is distributed under the MIT License. See LICENSE.
+
+The repository includes a vendored copy of bootloader 0.11.17 from the Rust OSDev project. That dependency is licensed under the MIT License or Apache License, Version 2.0. Its license texts are retained under vendor/bootloader/LICENSE-MIT and vendor/bootloader/LICENSE-APACHE.
+
+The vendored bootloader source contains local build compatibility changes required by Novel OS. Those changes remain subject to the applicable upstream license terms.

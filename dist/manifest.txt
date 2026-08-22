@@ -1,0 +1,9 @@
+artifacts=novel_os-bios.img,novel_os-uefi.img
+bios_sha256=b6815ea30dc0cdd00f73c51a3402ef8838f30436aaa33984c38e99046434afc9
+uefi_sha256=a5112e13b18f8f4273ebe8096125c6a76c22cd22453e9363f5a61a0768638a8b
+cargo_lock_sha256=841b6bec89619a5d32719cfd684f41f00bf3afdbef6292605691ac017c100025
+git_commit=f2ed6ccff52548354d9d93506720f533240c064b
+git_tag=smp-verification-head-v1-2-gf2ed6cc
+rustc=rustc 1.100.0-nightly (c656540d6 2026-08-21)
+scope=BIOS and UEFI development kernel platform milestone; OVMF verified
+excluded=SMP,NIC,DMA,general-persistent-filesystem,dynamic-run-queue,FPU-SIMD,production-userland,CI-external

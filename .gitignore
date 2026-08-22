@@ -1,0 +1,29 @@
+# Rust and local build outputs
+/target/
+/build/
+/out/
+/release/
+
+# Runtime logs and emulator traces
+*.log
+*.trace
+*.serial
+*.qcow2
+*.raw
+
+# Local credentials and machine-specific configuration
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Editor and operating-system files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Generated release artifacts are included explicitly in the source package when present.
+/dist/
