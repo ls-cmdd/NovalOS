@@ -17,7 +17,7 @@ The repository is intentionally conservative about support claims. BIOS and UEFI
 
 ## Requirements
 
-A Linux x86_64 development host is required. Install Rust nightly using the toolchain declared in `rust-toolchain.toml`, together with the `x86_64-unknown-none` and `x86_64-unknown-uefi` targets. The verification scripts also require Cargo, QEMU, and OVMF. The project uses a vendored bootloader dependency and does not require network access after dependencies are available locally.
+A Linux x86_64 development host is required. Install Rust nightly using the toolchain declared in `rust-toolchain.toml`, together with the `x86_64-unknown-none` and `x86_64-unknown-uefi` targets. The kernel build also requires NASM to assemble the AP trampoline. The verification scripts additionally require Cargo, QEMU, and OVMF. The project uses a vendored bootloader dependency and does not require network access after dependencies are available locally.
 
 ## Build
 
