@@ -1,0 +1,33 @@
+name: Rust CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Format, test, and release build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install nightly Rust and kernel target
+        uses: dtolnay/rust-toolchain@nightly
+        with:
+          components: rust-src, llvm-tools-preview
+          targets: x86_64-unknown-none
+
+      - name: Check formatting
+        run: cargo +nightly fmt --all -- --check
+
+      - name: Run kernel tests
+        run: cargo +nightly test -p kernel --bin kernel -j 1
+
+      - name: Build release images
+        run: cargo +nightly build --release --locked -j 1
