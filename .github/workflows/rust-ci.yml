@@ -17,11 +17,16 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Install nightly Rust and kernel target
+      - name: Install nightly Rust and BIOS/UEFI targets
         uses: dtolnay/rust-toolchain@nightly
         with:
           components: rustfmt, rust-src, llvm-tools-preview
-          targets: x86_64-unknown-none
+          targets: x86_64-unknown-none, x86_64-unknown-uefi
+
+      - name: Install NASM
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends nasm
 
       - name: Check formatting
         run: cargo +nightly fmt --all -- --check
