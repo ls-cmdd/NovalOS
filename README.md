@@ -59,4 +59,12 @@ The `smp-experimental` feature is for controlled bring-up diagnostics and is not
 
 The current verified scope is a BIOS and UEFI development kernel platform with a single-core default runtime and a gated AP bootstrap experiment. General persistent filesystems, dynamic SMP run queues, FPU/XSAVE context management, PCI/DMA device drivers, network hardware, production userland, an installer, and a package manager are not yet implemented as release features.
 
-Read [`docs/platform-status.md`](docs/platform-status.md), [`docs/verification.md`](docs/verification.md), and [`docs/roadmap.md`](docs/roadmap.md) for the current implementation boundaries.
+Read [`docs/platform-status.md`](docs/platform-status.md), [`docs/verification.md`](docs/verification.md), and [`docs/execution-status.md`](docs/execution-status.md) before relying on any feature. Detailed reproducibility records are in [`docs/final-verification-evidence.md`](docs/final-verification-evidence.md).
+
+## License
+
+Novel OS is distributed under the MIT License. See [`LICENSE`](LICENSE).
+
+## Contributions
+
+Contributions are welcome when they include a clear design rationale, focused changes, tests appropriate to the affected layer, and an update to the support documentation when behavior or platform scope changes. Do not enable experimental SMP paths in the default release package without a reproducible QEMU proof and a documented concurrency audit.
